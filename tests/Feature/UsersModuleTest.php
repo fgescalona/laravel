@@ -17,7 +17,21 @@ class UsersModuleTest extends TestCase
     {
         $this->get('/usuarios')
             ->assertStatus(200)
-            ->assertSee('Usuarios');
+            ->assertSee('Listado de usuarios')
+            ->assertSee('Javier')
+            ->assertSee('Francisco');
+    }
+
+    /**
+     * Prueba mensaje no hay usuarios si vienen vacios de la BD
+     *
+     * @test
+     */
+    function messageNoUsers()
+    {
+        $this->get('/usuarios?empty')
+            ->assertStatus(200)
+            ->assertSee('No hay usuarios registrados');
     }
 
     /**
