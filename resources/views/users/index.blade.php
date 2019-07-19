@@ -1,3 +1,9 @@
+@extends('layout')
+
+@section('title', "Lista de Usuarios")
+
+@section('content')
+
 <h1>{{ $title }}</h1>
 
 <hr>
@@ -9,3 +15,7 @@
         <h3>No hay usuarios registrados</h3>
     @endforelse
 </ul>
+
+@endsection
+
+
